@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChatVC.swift
 //  SmackChat2
 //
 //  Created by vishal chaubey on 3/28/20.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ChatVC: UIViewController {
+    
+    @IBOutlet weak var menuBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
-
 }
-
