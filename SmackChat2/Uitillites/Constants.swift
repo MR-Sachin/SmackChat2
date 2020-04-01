@@ -23,5 +23,9 @@ let TOKEN_KEY = "token"
 let USER_EMAIL = "userEmail"
 
 //Url Constant
-let BASE_URL = "http://localhost:3005/v1"
+let BASE_URL = "http://localhost:3005/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
+let URL_LOGIN = "\(BASE_URL)account/login"
+
+//header
+let HEADER = ["Constant-Type": "application/JSON; charset=utf-8 "]

@@ -272,7 +272,7 @@
                                         <rect key="frame" x="0.0" y="49" width="250" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAe-7o-0fD">
                                         <rect key="frame" x="0.0" y="81" width="250" height="2"/>
