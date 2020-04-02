@@ -127,7 +127,7 @@ class AuthServices {
                 
             
                 // and save these data which holding above these variable to UserDataService class method userService
-                UserService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
                 completion(true)
             
             }else {

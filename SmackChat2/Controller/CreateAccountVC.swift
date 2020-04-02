@@ -25,6 +25,16 @@ class CreateAccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // after selecting user profile image we need update user profile image
+    override func viewDidAppear(_ animated: Bool) {
+        // now check user profile (avatarName) still empty or not which we set as empty in userDataService class
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            //and also set local varible avatarName which used in  authserve in when createBtn pressed
+            avatarName = UserDataService.instance.avatarName
+        }
+    }
+    
     @IBAction func createBtnPressed(_ sender: Any) {
         
         //create a variable and check they are not nil if they are return by guar let

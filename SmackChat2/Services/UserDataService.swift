@@ -8,9 +8,9 @@
 
 import Foundation
 
-class UserService {
+class UserDataService {
     //create instance of this class which we used later for servar requesting
-    static let instance = UserService()
+    static let instance = UserDataService()
     
     //create local variable for parsing json data into here
     public private (set) var id = ""

@@ -65,6 +65,18 @@ class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionView
         let cellDimension = ((collectionView.bounds.width - padding) - (numberOfColumns - 1) * spaceBetweenCells) / numberOfColumns
         return CGSize(width: cellDimension, height: cellDimension)
     }
+    
+    // this function called when something selected in collection view
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if avatarType == .dark {
+            //when condition true then seceted data save into userDataService which is responsable for create all variable and save state on AvatarPickerVC or set it avatar name
+            UserDataService.instance.setAvatarName(avatarName: "dard\(indexPath.item)")
+        }else {
+            UserDataService.instance.setAvatarName(avatarName: "light\(indexPath.item)")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
