@@ -51,6 +51,20 @@ class AvatarPickerVC: UIViewController,UICollectionViewDelegate,UICollectionView
         collectionView.reloadData()
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        // this code provide which size of screen we provide number of coloumns
+        var numberOfColumns: CGFloat = 3
+        if UIScreen.main.bounds.width > 320 { // smaller size of screen iphone SE which is 320
+            numberOfColumns = 4
+        }
+        let spaceBetweenCells: CGFloat = 10  // spacing bw cell which we provide in storyboard
+        let padding:CGFloat = 40  // trailing and leading space 20 20 = 40
+        //now calculate cell dimension for cell
+        let cellDimension = ((collectionView.bounds.width - padding) - (numberOfColumns - 1) * spaceBetweenCells) / numberOfColumns
+        return CGSize(width: cellDimension, height: cellDimension)
+    }
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

@@ -15,6 +15,9 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var userImg: UIImageView!
     
+    var avatarName = "profileDefault"
+    var avatarColor = "[0.5,0.5,0.5,1]"  // set defualt color combination red green blue alpha property
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +30,30 @@ class CreateAccountVC: UIViewController {
         //create a variable and check they are not nil if they are return by guar let
         guard let email = emailTxt.text, emailTxt.text != "" else {return}
         guard let pass  = passwordTxt.text, passwordTxt.text != ""  else {return}
+        guard let userName = usernameTxt.text, usernameTxt.text != nil else {return}
         
         //pass email and password and register user
-        AuthServices.instance.registerUser(email: email, password: pass) { (success) in
+        AuthServices.instance.registerUser(email: email, password: pass)
+        { (success) in
             if success {
                 //print("register user!")
-                AuthServices.instance.loginUser(email: email, password: pass, complition: { (success) in
-                    print("login User \(AuthServices.instance.authToken)")
+                AuthServices.instance.loginUser(email: email, password: pass, completion:
+                    { (success) in
+                    if success {
+                        //print("login User \(AuthServices.instance.authToken)")
+                        AuthServices.instance.createUser(name: userName, email: email, avatarName: self.avatarName, avatarColor:
+                            self.avatarColor, completion:
+                            { (success) in
+                                if success {
+                                    self.performSegue(withIdentifier: UNWIND, sender: nil)
+                                }
+                        })
+                    }
+                    
                 })
+                
+                
+                
             }
         }
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthServices {
    
@@ -70,7 +71,7 @@ class AuthServices {
         }
     }
     
-    func loginUser(email: String, password: String, complition:@escaping CompletionHandler)  {
+    func loginUser(email: String, password: String, completion:@escaping CompletionHandler)  {
         let lowerCaseEmail = email.lowercased()
         let body: [String: Any] = [
             "email": lowerCaseEmail,
@@ -88,11 +89,52 @@ class AuthServices {
                         }
                     }
                     self.isLoggedIn = true
-                    complition(true)
+                    completion(true)
                 }else {
-                    complition(false)
+                    completion(false)
                     debugPrint(response.result.error as Any)
                 }
+        }
+    }
+    
+    func createUser(name:String,email:String,avatarName:String,avatarColor:String,completion:@escaping CompletionHandler) {
+        let lowerCaseEmail = email.lowercased()
+        let body:[String:Any] = [
+                                "name": name,
+                                "email": lowerCaseEmail,
+                                "avatarName": avatarName,
+                                "avatarColor": avatarColor
+                                ]
+        
+        //here we saprete create varable for header instead of used constants which we creted already bez in that usercreate we need a authorizatio token
+        let header = [
+            "Authorization": "Bearer\(AuthServices.instance.authToken)",
+            "Content-Type": "application/json ; charset = utf-8"
+                      ]
+        
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            
+            //if server response success store json format data into these variable mean parsing json data
+            if response.result.error == nil {
+                guard let data = response.data else { return}
+                
+                let json = JSON(data:data)
+                let id  = json["_id"].stringValue
+                let color  = json["avatarColor"].stringValue
+                let avatarName = json["avatarName"].stringValue
+                let email  = json["email"].stringValue
+                let name  = json["name"].stringValue
+                
+            
+                // and save these data which holding above these variable to UserDataService class method userService
+                UserService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                completion(true)
+            
+            }else {
+               completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        
         }
     }
     

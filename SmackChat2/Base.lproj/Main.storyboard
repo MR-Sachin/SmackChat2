@@ -38,13 +38,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKt-dO-tFZ">
-                                <rect key="frame" x="0.0" y="44" width="66" height="24"/>
+                                <rect key="frame" x="10" y="44" width="66" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEp-1m-LLO">
-                                <rect key="frame" x="0.0" y="88" width="52" height="16.5"/>
+                                <rect key="frame" x="10" y="88" width="52" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                 <state key="normal" image="addChannelButton"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmp-f1-LGG">
-                                <rect key="frame" x="95" y="589" width="64" height="41"/>
+                                <rect key="frame" x="100" y="589" width="64" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="oLo-20-pqr">
-                                <rect key="frame" x="0.0" y="572" width="75" height="75"/>
+                                <rect key="frame" x="5" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="S2w-MI-WQP"/>
                                     <constraint firstAttribute="height" constant="75" id="i3d-jz-Bki"/>
@@ -80,14 +80,14 @@
                             <constraint firstItem="r2y-vT-kRQ" firstAttribute="bottom" secondItem="oLo-20-pqr" secondAttribute="bottom" constant="20" id="2vw-VL-ejK"/>
                             <constraint firstItem="fS9-Ma-GjS" firstAttribute="top" secondItem="uky-Bv-h3H" secondAttribute="bottom" constant="20" id="55e-Rb-sUB"/>
                             <constraint firstItem="r2y-vT-kRQ" firstAttribute="trailing" secondItem="uky-Bv-h3H" secondAttribute="trailing" constant="60" id="CAL-Vx-tiq"/>
-                            <constraint firstItem="rKt-dO-tFZ" firstAttribute="leading" secondItem="r2y-vT-kRQ" secondAttribute="leading" id="KEj-RS-9GL"/>
+                            <constraint firstItem="rKt-dO-tFZ" firstAttribute="leading" secondItem="r2y-vT-kRQ" secondAttribute="leading" constant="10" id="KEj-RS-9GL"/>
                             <constraint firstItem="BEp-1m-LLO" firstAttribute="top" secondItem="rKt-dO-tFZ" secondAttribute="bottom" constant="20" id="Ki1-tZ-dNy"/>
-                            <constraint firstItem="BEp-1m-LLO" firstAttribute="leading" secondItem="r2y-vT-kRQ" secondAttribute="leading" id="Mbv-Ty-pIs"/>
+                            <constraint firstItem="BEp-1m-LLO" firstAttribute="leading" secondItem="r2y-vT-kRQ" secondAttribute="leading" constant="10" id="Mbv-Ty-pIs"/>
                             <constraint firstItem="fS9-Ma-GjS" firstAttribute="leading" secondItem="r2y-vT-kRQ" secondAttribute="leading" id="Qlm-0s-fWL"/>
                             <constraint firstItem="gmp-f1-LGG" firstAttribute="centerY" secondItem="oLo-20-pqr" secondAttribute="centerY" id="cPo-qV-9Ma"/>
                             <constraint firstItem="uky-Bv-h3H" firstAttribute="centerY" secondItem="BEp-1m-LLO" secondAttribute="centerY" id="cs8-3R-J9U"/>
                             <constraint firstItem="gmp-f1-LGG" firstAttribute="leading" secondItem="oLo-20-pqr" secondAttribute="trailing" constant="20" id="iNn-yh-NIz"/>
-                            <constraint firstItem="oLo-20-pqr" firstAttribute="leading" secondItem="r2y-vT-kRQ" secondAttribute="leading" id="jWj-dn-P9u"/>
+                            <constraint firstItem="oLo-20-pqr" firstAttribute="leading" secondItem="r2y-vT-kRQ" secondAttribute="leading" constant="5" id="jWj-dn-P9u"/>
                             <constraint firstItem="rKt-dO-tFZ" firstAttribute="top" secondItem="r2y-vT-kRQ" secondAttribute="top" constant="24" id="lIe-Or-Geq"/>
                             <constraint firstItem="oLo-20-pqr" firstAttribute="top" secondItem="fS9-Ma-GjS" secondAttribute="bottom" constant="20" id="mio-9g-iby"/>
                             <constraint firstItem="r2y-vT-kRQ" firstAttribute="trailing" secondItem="fS9-Ma-GjS" secondAttribute="trailing" id="wk5-PD-DEm"/>
@@ -180,8 +180,8 @@
                                     <constraint firstAttribute="width" constant="250" id="csX-3S-pUr"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL2-wn-xdq">
-                                <rect key="frame" x="62.5" y="294" width="250" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL2-wn-xdq" customClass="RoundedButton" customModule="SmackChat2" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="294" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.34901960784313724" green="0.61568627450980395" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Cw8-b6-SZh"/>
@@ -190,9 +190,14 @@
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grw-fP-eSi">
-                                <rect key="frame" x="51.5" y="327" width="273" height="31"/>
+                                <rect key="frame" x="51" y="352" width="273" height="31"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="qly-Qt-On6"/>
@@ -301,7 +306,7 @@
                                     <constraint firstAttribute="height" constant="132" id="wqf-wR-FPn"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKT-Rs-gni">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKT-Rs-gni" customClass="RoundedButton" customModule="SmackChat2" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="597" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -309,9 +314,14 @@
                                     <constraint firstAttribute="height" constant="50" id="She-Gs-UVk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="LOGIN">
+                                <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createBtnPressed:" destination="aKy-qQ-OXG" eventType="touchUpInside" id="SnN-ok-0QQ"/>
                                 </connections>
@@ -388,7 +398,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjp-Su-CHJ">
-                                <rect key="frame" x="0.0" y="28" width="28" height="28"/>
+                                <rect key="frame" x="10" y="28" width="28" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="YNY-gj-4HI"/>
                                     <constraint firstAttribute="width" constant="28" id="tLk-o2-nzh"/>
@@ -449,7 +459,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mjp-Su-CHJ" firstAttribute="leading" secondItem="RYM-e2-fw2" secondAttribute="leading" id="1t5-sf-cfE"/>
+                            <constraint firstItem="mjp-Su-CHJ" firstAttribute="leading" secondItem="RYM-e2-fw2" secondAttribute="leading" constant="10" id="1t5-sf-cfE"/>
                             <constraint firstItem="nEa-Hu-47y" firstAttribute="leading" secondItem="RYM-e2-fw2" secondAttribute="leading" id="51e-sB-mHR"/>
                             <constraint firstItem="mjp-Su-CHJ" firstAttribute="top" secondItem="RYM-e2-fw2" secondAttribute="top" constant="8" id="AUg-Ab-00C"/>
                             <constraint firstItem="je1-ex-2GC" firstAttribute="top" secondItem="RYM-e2-fw2" secondAttribute="top" constant="8" id="CCF-Yo-umH"/>
