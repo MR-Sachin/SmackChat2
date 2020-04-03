@@ -63,7 +63,7 @@
                                     <action selector="loginBtnPressed:" destination="cFV-eJ-4HG" eventType="touchUpInside" id="DxY-cR-fQ9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="oLo-20-pqr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="oLo-20-pqr" customClass="CircleImage" customModule="SmackChat2" customModuleProvider="target">
                                 <rect key="frame" x="5" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="S2w-MI-WQP"/>
@@ -104,6 +104,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="gmp-f1-LGG" id="zSZ-wC-Hcz"/>
+                        <outlet property="userImg" destination="oLo-20-pqr" id="u3l-6R-OYo"/>
                         <segue destination="akM-Mq-tit" kind="show" identifier="toLogin" id="OXB-eW-KF7"/>
                     </connections>
                 </viewController>
@@ -326,7 +327,7 @@
                                     <action selector="createBtnPressed:" destination="aKy-qQ-OXG" eventType="touchUpInside" id="SnN-ok-0QQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="5SU-5d-7P6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="5SU-5d-7P6" customClass="CircleImage" customModule="SmackChat2" customModuleProvider="target">
                                 <rect key="frame" x="137.5" y="298.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="HLK-G9-DJy"/>
@@ -354,11 +355,16 @@
                                     <action selector="pickBgColorPressed:" destination="aKy-qQ-OXG" eventType="touchUpInside" id="ydr-SL-w2B"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7YW-rr-TPg">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.31764705879999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3es-Eb-4o2" firstAttribute="centerX" secondItem="5SU-5d-7P6" secondAttribute="centerX" id="1xY-dS-KOZ"/>
                             <constraint firstItem="kNf-wf-bVg" firstAttribute="top" secondItem="h0w-iV-pZD" secondAttribute="top" constant="40" id="4hg-Gm-30U"/>
+                            <constraint firstItem="7YW-rr-TPg" firstAttribute="centerX" secondItem="WbR-Ld-4JQ" secondAttribute="centerX" id="7G8-Sq-7dv"/>
                             <constraint firstItem="kNf-wf-bVg" firstAttribute="centerX" secondItem="WbR-Ld-4JQ" secondAttribute="centerX" id="9Vg-eJ-5d9"/>
                             <constraint firstItem="h0w-iV-pZD" firstAttribute="bottom" secondItem="aKT-Rs-gni" secondAttribute="bottom" constant="20" id="IHg-es-qi8"/>
                             <constraint firstItem="shG-Y7-sGc" firstAttribute="top" secondItem="h0w-iV-pZD" secondAttribute="top" constant="20" id="L6H-nE-Iec"/>
@@ -366,6 +372,7 @@
                             <constraint firstItem="3es-Eb-4o2" firstAttribute="top" secondItem="kNf-wf-bVg" secondAttribute="bottom" constant="40" id="UTe-6L-XNW"/>
                             <constraint firstItem="uZr-rR-Dx2" firstAttribute="top" secondItem="5SU-5d-7P6" secondAttribute="top" id="Xde-5S-1mt"/>
                             <constraint firstItem="uZr-rR-Dx2" firstAttribute="width" secondItem="5SU-5d-7P6" secondAttribute="width" id="ZjM-9s-i3X"/>
+                            <constraint firstItem="7YW-rr-TPg" firstAttribute="centerY" secondItem="WbR-Ld-4JQ" secondAttribute="centerY" constant="-100" id="bQn-UX-v1C"/>
                             <constraint firstItem="qpl-O8-Wyz" firstAttribute="centerX" secondItem="WbR-Ld-4JQ" secondAttribute="centerX" id="cDN-F8-jLs"/>
                             <constraint firstItem="3es-Eb-4o2" firstAttribute="centerX" secondItem="WbR-Ld-4JQ" secondAttribute="centerX" id="f4e-Rb-Vzu"/>
                             <constraint firstItem="5SU-5d-7P6" firstAttribute="top" secondItem="3es-Eb-4o2" secondAttribute="bottom" constant="40" id="hWo-XA-fj3"/>
@@ -378,6 +385,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="zI0-5s-FIJ" id="Hbl-Yp-HUO"/>
                         <outlet property="passwordTxt" destination="FDp-Nm-675" id="SlE-WV-cEY"/>
+                        <outlet property="spinner" destination="7YW-rr-TPg" id="37E-Cd-MjI"/>
                         <outlet property="userImg" destination="5SU-5d-7P6" id="8V0-Py-pkX"/>
                         <outlet property="usernameTxt" destination="VCY-ky-Twy" id="c9c-fR-Kfv"/>
                         <segue destination="u2B-7P-cM4" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="z5E-QR-7Dp"/>
