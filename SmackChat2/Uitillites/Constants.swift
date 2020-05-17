@@ -22,6 +22,8 @@ let smackPurplePlaceHolder = #colorLiteral(red: 0.2588235294, green: 0.317647058
 
 //Notification
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("NotifiUserDataChange")
+let NOTIF_CHANNELS_LOADED =  Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
 
 //Auth
 let LOGGED_IN_KEY = "loggedIn"
@@ -33,6 +35,15 @@ let BASE_URL = "http://localhost:3005/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
+let URL_GET_CHANNELS = "\(BASE_URL)channel/"
+
 
 //header
 let HEADER = ["Constant-Type": "application/JSON; charset=utf-8 "]
+
+//here we saprete create varable for header instead of used constants which we creted already bez in that usercreate we need a authorizatio token
+ let BEARER_HEADER =   [
+    "Authorization": "Bearer\(AuthServices.instance.authToken)",
+    "Content-Type": "application/json ; charset = utf-8"
+]

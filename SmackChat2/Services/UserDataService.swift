@@ -33,6 +33,8 @@ class UserDataService {
     func setAvatarName(avatarName: String)  {
         self.avatarName = avatarName
     }
+    
+    
     func returnUIColorFromServer(components: String) -> UIColor {
         
         //scanner for scan string array of avatar color which parse form server in fome of array string
@@ -70,12 +72,23 @@ class UserDataService {
         let newUiColor = UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
         
         return newUiColor
-
-
-        
-        
-
-
+    }
     
+    // we create function perform all these variable set as empty and authosevice isLoggedIn set false and called that functin in profileVC 
+    func logoutUser() {
+        id = ""
+        avatarName = ""
+        avatarColor = ""
+        name = ""
+        email = ""
+        
+        AuthServices.instance.isLoggedIn = false
+        AuthServices.instance.userEmail = ""
+        AuthServices.instance.authToken = ""
+        
+        //  clean all channel name method call for clear list
+        MessageService.instance.clearChannel()
+        
     }
 }
+

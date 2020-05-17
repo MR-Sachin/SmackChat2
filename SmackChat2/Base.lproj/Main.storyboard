@@ -49,9 +49,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uky-Bv-h3H">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uky-Bv-h3H" userLabel="Add Channel">
                                 <rect key="frame" x="293" y="85.5" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelPressed:" destination="cFV-eJ-4HG" eventType="touchUpInside" id="P41-cr-xOI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmp-f1-LGG">
                                 <rect key="frame" x="100" y="589" width="64" height="41"/>
@@ -73,6 +76,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fS9-Ma-GjS">
                                 <rect key="frame" x="0.0" y="127.5" width="375" height="424.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="64" id="29r-f1-I6g" customClass="ChannelCell" customModule="SmackChat2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="29r-f1-I6g" id="8fn-Wx-Ssd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTN-PG-b5r">
+                                                    <rect key="frame" x="27" y="21.5" width="68" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jTN-PG-b5r" firstAttribute="centerY" secondItem="8fn-Wx-Ssd" secondAttribute="centerY" id="CyC-O7-29h"/>
+                                                <constraint firstItem="jTN-PG-b5r" firstAttribute="leading" secondItem="8fn-Wx-Ssd" secondAttribute="leadingMargin" constant="12" id="nUs-Qw-hl6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="jTN-PG-b5r" id="Bwr-nt-UfJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.2901960784" green="0.30196078430000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,6 +133,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="gmp-f1-LGG" id="zSZ-wC-Hcz"/>
+                        <outlet property="tableView" destination="fS9-Ma-GjS" id="ssY-AL-vHH"/>
                         <outlet property="userImg" destination="oLo-20-pqr" id="u3l-6R-OYo"/>
                         <segue destination="akM-Mq-tit" kind="show" identifier="toLogin" id="OXB-eW-KF7"/>
                     </connections>
@@ -196,6 +226,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="akM-Mq-tit" eventType="touchUpInside" id="Qvk-jl-NRz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grw-fP-eSi">
                                 <rect key="frame" x="51" y="352" width="273" height="31"/>
@@ -212,9 +245,14 @@
                                     <action selector="createAccountBtnPressed:" destination="akM-Mq-tit" eventType="touchUpInside" id="tUp-AR-pf9"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-Wi-tQv">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.31764705879999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="UO7-Wi-tQv" firstAttribute="centerX" secondItem="B0y-XH-mzd" secondAttribute="centerX" id="2SY-Pd-Fn0"/>
                             <constraint firstItem="Grw-fP-eSi" firstAttribute="top" secondItem="cL2-wn-xdq" secondAttribute="bottom" id="BEk-xV-Svb"/>
                             <constraint firstItem="dj3-LA-5Mc" firstAttribute="centerX" secondItem="B0y-XH-mzd" secondAttribute="centerX" id="KJu-DO-30a"/>
                             <constraint firstItem="cL2-wn-xdq" firstAttribute="top" secondItem="dj3-LA-5Mc" secondAttribute="bottom" constant="40" id="Kjt-8j-y84"/>
@@ -223,12 +261,16 @@
                             <constraint firstItem="poB-2U-n16" firstAttribute="trailing" secondItem="sDJ-Lf-KzZ" secondAttribute="trailing" constant="20" id="i9d-AS-g1t"/>
                             <constraint firstItem="cL2-wn-xdq" firstAttribute="centerX" secondItem="B0y-XH-mzd" secondAttribute="centerX" id="j9D-jq-NfX"/>
                             <constraint firstItem="Grw-fP-eSi" firstAttribute="centerX" secondItem="B0y-XH-mzd" secondAttribute="centerX" id="r9q-iL-Tzg"/>
+                            <constraint firstItem="UO7-Wi-tQv" firstAttribute="centerY" secondItem="B0y-XH-mzd" secondAttribute="centerY" constant="-100" id="rAe-iv-Sva"/>
                             <constraint firstItem="dj3-LA-5Mc" firstAttribute="top" secondItem="bNL-Pj-aDh" secondAttribute="bottom" constant="60" id="zUU-bc-7HX"/>
                             <constraint firstItem="sDJ-Lf-KzZ" firstAttribute="top" secondItem="poB-2U-n16" secondAttribute="top" constant="20" id="zvb-Gj-1E6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="poB-2U-n16"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="uE6-yz-Hb7" id="n7L-sf-5px"/>
+                        <outlet property="spinner" destination="UO7-Wi-tQv" id="Ki4-R6-PhS"/>
+                        <outlet property="userNameTxt" destination="VC5-Pr-4v8" id="y31-jd-Fb2"/>
                         <segue destination="aKy-qQ-OXG" kind="show" identifier="toCreateAccount" id="0li-ZQ-C10"/>
                     </connections>
                 </viewController>
@@ -532,6 +574,7 @@
                         <viewLayoutGuide key="safeArea" id="lAu-dg-qxv"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLabel" destination="Y5U-VB-Fw4" id="2wd-Y6-pC6"/>
                         <outlet property="menuBtn" destination="8FO-2c-yCv" id="jyt-z8-o50"/>
                     </connections>
                 </viewController>

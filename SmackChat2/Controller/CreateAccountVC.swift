@@ -24,6 +24,8 @@ class CreateAccountVC: UIViewController {
         super.viewDidLoad()
         setupView()
         
+        spinner.isHidden = false
+        
         // Do any additional setup after loading the view.
     }
     
@@ -64,12 +66,10 @@ class CreateAccountVC: UIViewController {
                             self.avatarColor, completion:
                             { (success) in
                                 if success {
-                                    //print(UserDataService.instance.name, UserDataService.instance.avatarName)
+                                    print(UserDataService.instance.name, UserDataService.instance.avatarName)
                                     self.spinner.isHidden = true
                                     self.spinner.stopAnimating()
                                     self.performSegue(withIdentifier: UNWIND, sender: nil)
-                                    
-                                    //
                                     NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                                 }
                         })
@@ -96,16 +96,18 @@ class CreateAccountVC: UIViewController {
         let b = CGFloat(arc4random_uniform(255)) / 255
         
         bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        self.avatarColor = "[\(r),\(g),\(b),1]"
+
         UIView.animate(withDuration: 0.2 ){
             self.userImg.backgroundColor = self.bgColor
             
-            self.avatarColor = "[\(r),\(g),\(b),1"
         }
     }
     
     
     // here we change placeholder color
     func setupView () {
+        spinner.isHidden = true
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor:smackPurplePlaceHolder])
         emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor:smackPurplePlaceHolder])
         passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor:smackPurplePlaceHolder])
